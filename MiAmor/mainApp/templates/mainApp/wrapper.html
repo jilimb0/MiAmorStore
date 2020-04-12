@@ -47,33 +47,27 @@
     </style>
 </head>
 <body>
-     <p face="OpenSans">
-         <div class="panel.jumbotron.container-fluid.panel-body transparent panel-default " style="height: 100px; position: relative">
-<!--             <div class="" >-->
-<!--                <div class="jumbotron.container-fluid" style="height: 100px">-->
-                    <nav class="navbar fixed-top navbar-light">
-                        <a class="navbar-brand" href="#" style="font-size: 2em; margin-left: 170px"> MiAmorStore </a>
-                        <div class="text-center" style="margin-left: 100px">
-                          <a class="navbar-brand" href="#"> Catalogue</a>
-                          <a class="navbar-brand" href="#"> Constructor </a>
-                          <a class="navbar-brand" href="#"> Contacts </a>
-                       </div>
-                        <form class="form-inline my-2 my-lg-0" style="margin-right: 150px">
-                                 <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                            </form>
-        <!--                 <a class="navbar-brand" href="#"> Login </a>-->
-                     </nav>
-<!--                </div>-->
-<!--            </div>-->
+    <div class="panel.jumbotron.container-fluid.panel-body transparent panel-default " style="height: 100px; position: relative">
+        <nav class="navbar fixed-top navbar-light">
+            <a class="navbar-brand" href="#" style="font-size: 2em; margin-left: 170px"> MiAmorStore </a>
+            <div class="text-center" style="margin-left: 100px">
+              <a class="navbar-brand" href="#"> Catalogue</a>
+              <a class="navbar-brand" href="#"> Constructor </a>
+              <a class="navbar-brand" href="#"> Contacts </a>
+            </div>
+            <form class="form-inline my-2 my-lg-0" style="margin-right: 150px">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+         </nav>
+    </div>
+    <div class="container" style="height: 100px; font-size: 2em" align="center">
+         {{ quote }}
      </div>
-         <div class="container" style="height: 100px; font-size: 2em" align="center">
-             {{ quote }}
-         </div>
-         <div class="panel panel-default">
-             <div class="panel-body transparent">
-                <div class="sign text-white" style="width: 1350px;" align="center">
-                     <figure class="thumb">
+    <div class="panel panel-default">
+        <div class="panel-body transparent">
+            <div class="sign text-white" style="width: 1350px;" align="center">
+                <figure class="thumb">
                     <figcaption>
                         <img src="{% static 'mainApp/image/tshirt.png' %}" class="rounded">
                     Футболка 100р</figcaption>
@@ -92,10 +86,10 @@
                     <figcaption>
                         <img src="{% static 'mainApp/image/tshirt.png' %}" class="rounded">
                      Футболка 100р</figcaption>
-                        </figure>
-                </div>
+                </figure>
             </div>
-     </div>
+        </div>
+    </div>
     <div class="container" style="height: 100px" align="center">
         <img src="{% static 'mainApp/image/Inst.png' %}" class="rounded" width="50">
         <img src="{% static 'mainApp/image/FB.png' %}" class="rounded" width="50">
@@ -104,8 +98,6 @@
 
         <hr>
         &copy; Все права защищены 2020
-         </div>
-
-         </font>
+    </div>
 </body>
 </html>
