@@ -1,5 +1,264 @@
-{% extends "mainApp/wrapper.html" %}
-{% load static %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset ="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>MiAmorStore</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/card.css' %}" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
 
-{% endblock %}
+       body {
+        height: 100%;
+        background-image: url("{% static 'mainApp/image/bg1.jpg' %}");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+       }
+
+       img  {
+        height: 300px;
+        width: 300px;
+       }
+
+        .sign {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1400px;
+       }
+
+       .transparent {
+        background-color: rgba(0,0,0,0.6);
+        }
+
+        .panel {
+         background-color: transparent;
+        }
+        .container .card
+        {
+            margin: 25px 25px;
+        }
+        .sci
+        {
+            position: fixed;
+            bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            right: 10px;
+        }
+        .sci li
+        {
+            list-style: none;
+        }
+        .sci li a
+        {
+            position: relative;
+            display: grid;
+            place-items: center;
+            width: 50px;
+            height: 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 10px;
+        }
+        .sci li a:hover
+        {
+            background: #fff;
+        }
+        .sci li a img
+        {
+            width: 50px;
+            height: 50px;
+        }
+
+
+    </style>
+</head>
+<body>
+        <nav class="navbar fixed-top navbar-dark panel.jumbotron.container-fluid.panel-body transparent panel-default" style="height: 80px;">
+            <a class="navbar-brand" href="" style="font-size: 3em; margin-left: 150px; font-family: 'Yellowtail', cursive; transform: rotate(-2deg);">MiAmorStore</a><wbr>
+<!--            <a class="navbar-brand" href="" style="font-size: 2em; margin-left: 100px; width:50px; font-family: 'Yellowtail', cursive;">Store</a>-->
+            <div class="text" style="margin-left: 50px">
+              <a class="navbar-brand" style="margin-right: 30px" href="t-shirts/">T-Shirts</a>
+              <a class="navbar-brand" style="margin-right: 30px" href="shoppers/">Shoppers</a>
+              <a class="navbar-brand" style="margin-right: 30px" href="sweatshirts/">Sweatshirts</a>
+              <a class="navbar-brand" style="margin-right: 30px" href="notes/">Notes</a>
+<!--               <a class="navbar-brand" style="margin-right: 30px" href="stickers/">Stickers</a>
+              <a class="navbar-brand" style="margin-right: 30px" href="cases/">Cases</a>
+              <a class="navbar-brand" style="margin-right: 30px" href="constructor/"> Constructor </a>
+ -->            </div>
+            <form class="form-inline my-2 my-lg-0" style="margin-right: 20px">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <a class="navbar-brand" style="margin-right: 0px" href="basket/"><img style="width: 50px;
+            height: 50px;" src="{% static 'mainApp/image/basket.svg' %}"></a>
+            <a class="navbar-brand" style="margin-right: 0px">|</a>
+            <a class="navbar-brand" style="margin-right: 70px" href="login/">LogIn</a>
+         </nav>
+    <div class="container" style="height: 100px; font-size: 2em; margin-top: 125px" align="center">
+         <h1 class="container" href="#" style="font-size: 2em;"> MiAmor Store </h1>
+     </div>
+    <div class="container" style="height: 100px; font-size: 2em; margin-top: 25px" align="center">
+         {{ quote }}
+     </div>
+        <div class="panel panel-default">
+            <div class="sign panel-body transparent" >
+
+                <div class="container">
+                    <div class="card" style="float: left">
+                        <div class="imgBx">
+                            <img src="{% static 'mainApp/t-shirts/tshirt1.png' %}">
+                        </div>
+                        <div class="contentBx">
+                            <h2>T-Shirt</h2>
+                            <div class="size">
+                                <h3>Size :</h3>
+                                <span>S</span>
+                                <span>M</span>
+                                <span>L</span>
+                                <span>XL</span>
+                            </div>
+                            <div class="color">
+                                <h3>Color :</h3>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="price">
+                                <h4 style="color: #fff">100p</h4>
+                            </div>
+                            <a href="#">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card" style="float: left">
+                        <div class="imgBx">
+                            <img src="{% static 'mainApp/shoppers/shopper2.jpg' %}">
+                        </div>
+                        <div class="contentBx">
+                            <h2>Shopper</h2>
+                            <div class="color">
+                                <h3>Color :</h3>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="price">
+                                <h3 style="color: #fff">100p</h3>
+                            </div>
+                            <a href="#" style="margin-top: 20px">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                    <div class="container">
+                        <div class="card" style="float: left">
+                            <div class="imgBx">
+                                <img src="{% static 'mainApp/sweatshirts/sweatshirt.jpg' %}">
+                            </div>
+                            <div class="contentBx">
+                                <h2>Sweatshirt</h2>
+                                <div class="size">
+                                    <h3>Size :</h3>
+                                    <span>S</span>
+                                    <span>M</span>
+                                    <span>L</span>
+                                    <span>XL</span>
+                                </div>
+                                <div class="color">
+                                    <h3>Color :</h3>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="price">
+                                    <h4 style="color: #fff">100p</h4>
+                                </div>
+                              <a href="#">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="card">
+                            <div class="imgBx">
+                                <img src="{% static 'mainApp/notes/note1.jpg' %}">
+                            </div>
+                            <div class="contentBx">
+                                <h2>Note</h2>
+                                <div class="color">
+                                    <h3>Color :</h3>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="price">
+                                    <h3 style="color: #fff">100p</h3>
+                                </div>
+                                <a href="#">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+<!--                     <div class="container">
+                        <div class="card" style="float: left">
+                            <div class="imgBx">
+                                <img src="{% static 'mainApp/cases/case.jpg' %}">
+                            </div>
+                            <div class="contentBx">
+                                <h2>Cases</h2>
+                                <div class="color">
+                                    <h3>Color :</h3>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <a href="#">Buy Now</a>
+                            </div>
+                        </div>
+                    </div> -->
+<!--                     <div class="container">
+                        <div class="card">
+                            <div class="imgBx">
+                                <img src="{% static 'mainApp/stickers/stickers.jpg' %}">
+                            </div>
+                            <div class="contentBx">
+                                <h2>T-Shirt</h2>
+                                <div class="size">
+                                    <h3>Size :</h3>
+                                    <span>S</span>
+                                    <span>M</span>
+                                    <span>L</span>
+                                    <span>XL</span>
+                                </div>
+                                <div class="color">
+                                    <h3>Color :</h3>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <a href="#">Buy Now</a>
+                            </div>
+                        </div>
+                    </div> -->
+            </div>
+       </div>
+       <ul class="sci">
+           <li><a href="https://instagram.com/mi.amor.store?igshid=1ga90ra1pqrg2"><img src="{% static 'mainApp/image/insta.svg' %}"></a></li>
+           <li><a href=""><img src="{% static 'mainApp/image/tg.svg' %}"></a></li>
+           <li><a href="https://vk.com/public194660121"><img src="{% static 'mainApp/image/vk1.svg' %}"></a></li>
+           <li><a href=""><img src="{% static 'mainApp/image/fb.svg' %}"></a></li>
+
+       </ul>
+       <nav class="navbar-dark text-white transparent panel-default" style="height: 50px; margin-top: 100px" align="center">
+            <br>
+            <h6> &copy; Все права защищены 2020</h6>
+        </nav>
+      </div>
+    </body>
+</html>
